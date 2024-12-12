@@ -11,12 +11,6 @@ If the arrays are NOT identical, find the first index where the arrays differ an
 */
 
 function equalArrays(arrayOne, arrayTwo) {
-  // Arrays of different lengths can never be identical. Adding this early check improves readability and robustness.
-  if (arrayOne.length !== arrayTwo.length) {
-    console.log("Arrays are not identical. Found difference in length.");
-    return;
-  }
-
   let sum = 0;
 
   for (let i = 0; i < arrayOne.length; i++) {
@@ -28,19 +22,6 @@ function equalArrays(arrayOne, arrayTwo) {
   }
   console.log(`Arrays are identical. Sum: ${sum}`);
 }
-
-// function equalArrays(arrayOne, arrayTwo) {
-//   let sum = 0;
-
-//   for (let i = 0; i < arrayOne.length; i++) {
-//     if (arrayOne[i] !== arrayTwo[i]) {
-//       console.log(`Arrays are not identical. Found difference at ${i} index`);
-//       return;
-//     }
-//     sum += Number(arrayOne[i]);
-//   }
-//   console.log(`Arrays are identical. Sum: ${sum}`);
-// }
 
 equalArrays(
   ["10", "20", "30"],
