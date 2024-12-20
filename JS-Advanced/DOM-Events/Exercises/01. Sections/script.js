@@ -14,5 +14,4 @@ function create(words) {
       });
       result.appendChild(newDiv);
    }
-
 }
