@@ -1,3 +1,4 @@
+export const addCatView = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,4 +42,4 @@
     </main>
 </body>
 
-</html>
+</html>`;
