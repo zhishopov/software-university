@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+export const homeView = `
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -87,4 +88,4 @@
 
 </body>
 
-</html>
+</html>`;
