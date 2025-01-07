@@ -5,6 +5,11 @@ const server = http.createServer((request, response) => {
 
   // Get url from request
   const url = request.url;
+  console.log(url);
+
+  response.writeHead(200, {
+    "content-type": "text/plain",
+  });
 
   // Simple Routing
   if (url === "/") {
