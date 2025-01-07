@@ -2,14 +2,14 @@ import http from "http";
 import { homeView } from "./views/home/index.js";
 
 const server = http.createServer((request, response) => {
-  const url = response.url;
+  const url = request.url;
 
   response.writeHead(200, {
-    "content-type": "application/json",
+    "content-type": "text/html",
   });
 
   if (url === "/") {
-    request.write(homeView);
+    response.write(homeView);
   }
 
   response.end();
