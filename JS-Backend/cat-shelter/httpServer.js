@@ -20,7 +20,14 @@ const server = http.createServer((request, response) => {
     "content-type": "text/html",
   });
 
-  response.write(homeView);
+  if (url === "/") {
+    response.write(homeView);
+  } else if (url === "/cats/add-breed") {
+    response.write(addBreedView);
+  } else if (url === "/cats/add-cat") {
+    response.write(addCatView);
+  }
+
   response.end();
 });
 
