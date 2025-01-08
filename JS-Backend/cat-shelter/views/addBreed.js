@@ -1,4 +1,4 @@
-export const addBreedView = `
+export default () => `
 <!DOCTYPE html>
 <html lang="en">
   <head>

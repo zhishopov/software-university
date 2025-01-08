@@ -1,4 +1,4 @@
-export const addCatView = `
+export default () => `
 <!DOCTYPE html>
 <html lang="en">
 
