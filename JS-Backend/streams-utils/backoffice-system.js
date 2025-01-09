@@ -1,4 +1,8 @@
 import http from "http";
+import messageBroker from "./message-broker.js";
+
+import "./audit-system.js";
+import "./reporting-service.js";
 
 const server = http.createServer((request, response) => {
   const url = request.url;
@@ -6,7 +10,8 @@ const server = http.createServer((request, response) => {
   if (url === "/") {
     response.write("Home Page");
   } else if (url === "/create-user") {
-    response.write("User Created");
+    messageBroker.publish("userCreated", "Pesho");
+    response.write("User created");
   } else {
     response.write("Not Found!");
   }

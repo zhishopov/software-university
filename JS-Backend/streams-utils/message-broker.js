@@ -9,7 +9,7 @@ function subscribe(eventName, handler) {
 
 function publish(eventName, data) {
   // events[eventName] returns an array with functions
-  events[eventName].forEach((handler) => handler());
+  events[eventName].forEach((handler) => handler(data));
 }
 
 export default {
