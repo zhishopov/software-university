@@ -1,9 +1,12 @@
-import { createReadStream, createWriteStream } from "fs";
+import { createWriteStream, createReadStream } from "fs";
 
-const readStream = createReadStream("./input.txt", {
-  encoding: "utf-8",
-  highWaterMark: 1000,
-});
+const readStream = createReadStream(
+  "../../../../../../../Users/jivkoslav/Desktop/software-university/JS-Backend/streams-utils/streams/input.txt",
+  {
+    encoding: "utf-8",
+    highWaterMark: 1000,
+  }
+);
 const writeStream = createWriteStream("./output.txt", {
   encoding: "utf-8",
 });
