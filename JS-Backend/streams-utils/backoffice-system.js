@@ -12,6 +12,9 @@ const server = http.createServer((request, response) => {
   } else if (url === "/create-user") {
     messageBroker.publish("userCreated", "Pesho");
     response.write("User created");
+  } else if (url === "/delete-user") {
+    messageBroker.publish("userDeleted", "Ivan");
+    response.write("User deleted");
   } else {
     response.write("Not Found!");
   }
