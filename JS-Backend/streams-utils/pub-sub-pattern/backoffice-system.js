@@ -2,7 +2,7 @@ import http from "http";
 import messageBroker from "./message-broker.js";
 
 import "./audit-system.js";
-import "./reporting-service.js";
+import "../reporting-service.js";
 
 const server = http.createServer((request, response) => {
   const url = request.url;
