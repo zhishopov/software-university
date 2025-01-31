@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 
 const app = express();
 
@@ -15,6 +16,15 @@ app.get("/cats", (request, response) => {
 app.get("/cats/:catId", (request, response) => {
   const catId = request.params.catId;
   response.send(`Cat Page | ${catId}`);
+});
+
+// Downlaod a file
+app.get("/download", (request, response) => {
+  response.download("./cat.jpeg");
+});
+
+app.get("/download2", (requset, response) => {
+  response.sendFile(path.resolve("./cat.jpeg"));
 });
 
 app.listen(3000, () =>
