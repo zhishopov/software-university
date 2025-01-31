@@ -27,6 +27,13 @@ app.get("/download2", (requset, response) => {
   response.sendFile(path.resolve("./cat.jpeg"));
 });
 
+app.get("/data", (request, response) => {
+  response.json({
+    name: "Data",
+    grades: [1, 2, 3, 4, 5],
+  });
+});
+
 app.listen(3000, () =>
   console.log("Server is listening on http://localhost:3000...")
 );
