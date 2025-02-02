@@ -1,6 +1,8 @@
 import express from "express";
 import handlebars from "express-handlebars";
 
+import cats from "./cats.js";
+
 const app = express();
 
 // Add handlebars engine to express and set it as default
@@ -13,7 +15,7 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("home", { cat: cats[0] });
 });
 
 app.get("/add-cat", (req, res) => {
