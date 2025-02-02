@@ -3,6 +3,9 @@ import path from "path";
 
 const app = express();
 
+// Config static middleware
+app.use(express.static("public")); // If there are static files return them
+
 /* MIDDLEWARE */
 // Application Middleware
 app.use((request, response, next) => {
@@ -42,18 +45,18 @@ app.get("/cats", (request, response) => {
 
 // Paths can have params
 // Express automatically stores the param in the request as a object
-app.get("/cats/:catId", (request, response) => {
+app.get("./public/cats/:catId", (request, response) => {
   const catId = request.params.catId;
   response.send(`Cat Page | ${catId}`);
 });
 
 // Downlaod a file
 app.get("/download", (request, response) => {
-  response.download("./cat.jpeg");
+  response.download("./public/cat.jpeg");
 });
 
 app.get("/download2", (requset, response) => {
-  response.sendFile(path.resolve("./cat.jpeg"));
+  response.sendFile(path.resolve("./public/cat.jpeg"));
 });
 
 // Working with json
