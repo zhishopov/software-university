@@ -4,11 +4,24 @@ import handlebars from "express-handlebars";
 const app = express();
 
 // Add handlebars engine to express and set it as default
-app.engine("handlebars", handlebars.engine());
-app.set("view engine", "handlebars");
+app.engine(
+  "hbs",
+  handlebars.engine({
+    extname: "hbs",
+  })
+);
+app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-  res.render("home", { layout: false });
+  res.render("home");
+});
+
+app.get("/add-cat", (req, res) => {
+  res.render("addCat");
+});
+
+app.get("/add-breed", (req, res) => {
+  res.render("addBreed");
 });
 
 app.listen(2000, () =>
