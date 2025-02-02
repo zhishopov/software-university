@@ -15,7 +15,7 @@ app.engine(
 app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-  res.render("home", { cat: cats[0] });
+  res.render("home", { cats });
 });
 
 app.get("/add-cat", (req, res) => {
