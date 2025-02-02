@@ -3,6 +3,22 @@ import path from "path";
 
 const app = express();
 
+/* MIDDLEWARE */
+// Application Middleware
+app.use((request, response, next) => {
+  console.log(request.url);
+  next();
+});
+
+// Route Middleware
+app.use("/auth", (request, response, next) => {
+  if (Math.random() < 0.5) {
+    next();
+  } else {
+    response.status(401).send("Unauthorized");
+  }
+});
+
 app.get("/", (request, response) => {
   response.send("Hello from Express!");
 });
@@ -46,6 +62,10 @@ app.get("/redirect", (request, response) => {
   } else {
     response.redirect("/404");
   }
+});
+
+app.get("/auth/profile", (request, response) => {
+  response.send("Profile Page!");
 });
 
 app.listen(3000, () =>
