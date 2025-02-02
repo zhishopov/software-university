@@ -3,6 +3,7 @@ export default [
     id: 1,
     name: "Whiskers",
     imgUrl: "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg",
+    isStar: true,
     description: "A playful tabby cat who loves to chase laser pointers.",
   },
   {

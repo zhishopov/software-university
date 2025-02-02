@@ -3,6 +3,9 @@
 {{#each cats}}
   <article>
     <h2>{{name}}</h2>
+    {{#if isStar}}
+      <h3>SUPERSTAR</h3>
+    {{/if}}
     <img src="{{imgUrl}}" />
     <p>{{description}}</p>
   </article>
