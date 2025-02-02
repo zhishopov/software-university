@@ -8,7 +8,7 @@ app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello Handlebars!</h1>");
+  res.render("home", { layout: false });
 });
 
 app.listen(2000, () =>
