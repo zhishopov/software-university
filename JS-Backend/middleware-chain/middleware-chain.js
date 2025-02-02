@@ -2,7 +2,7 @@ const middlewares = [];
 
 // Add every middleware to the list of middlewares (array)
 function use(middleware) {
-  middleware.push(middleware);
+  middlewares.push(middleware);
 }
 
 function execute(request, response) {
@@ -13,8 +13,7 @@ function execute(request, response) {
       return;
     }
 
-    middlewares[index](request, response, next);
-    index++;
+    middlewares[index++](request, response, next);
   };
 
   next();

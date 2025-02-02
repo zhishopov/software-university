@@ -1,9 +1,9 @@
 {
   "name": "middleware-chain",
   "version": "1.0.0",
-  "main": "middleware-chain.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node middleware-chain.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
