@@ -10,14 +10,27 @@ app.use((request, response, next) => {
   next();
 });
 
-// Route Middleware
+// Path Middleware
 app.use("/auth", (request, response, next) => {
+  // Ignore the check. Used for simulation purposes.
   if (Math.random() < 0.5) {
-    next();
+    next(); // Valid user :)
   } else {
     response.status(401).send("Unauthorized");
   }
 });
+
+// Route Middleware
+app.get(
+  "/users",
+  (request, response, next) => {
+    console.log("Route middleware");
+    next();
+  },
+  (request, response) => {
+    response.send("Users Page!");
+  }
+);
 
 app.get("/", (request, response) => {
   response.send("Hello from Express!");
@@ -25,10 +38,6 @@ app.get("/", (request, response) => {
 
 app.get("/cats", (request, response) => {
   response.send("Cats Page!");
-});
-
-app.get("*", (request, response) => {
-  response.send("Page Not Found!");
 });
 
 // Paths can have params
@@ -66,6 +75,10 @@ app.get("/redirect", (request, response) => {
 
 app.get("/auth/profile", (request, response) => {
   response.send("Profile Page!");
+});
+
+app.get("*", (request, response) => {
+  response.send("Page Not Found!");
 });
 
 app.listen(3000, () =>
